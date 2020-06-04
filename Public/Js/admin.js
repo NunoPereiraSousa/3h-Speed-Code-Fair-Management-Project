@@ -1,8 +1,11 @@
 let URL = "http://localhost:8080";
 
+let idEdit = null
+
 window.onload = () => {
     loadMarketsTable();
     document.querySelector("#admin").value = user_id[0].id_tp2_user;
+    document.querySelector("#admin2").value = user_id[0].id_tp2_user;
 }
 
 const HTTP = axios.create({
@@ -15,6 +18,7 @@ let headers = {
 
 let user_id = JSON.parse(localStorage.getItem("logUser"));
 let form = document.querySelector("#addMarket")
+let form2 = document.querySelector("#editMarket")
 
 async function loadMarketsTable() {
     try {
@@ -29,7 +33,7 @@ async function loadMarketsTable() {
                         <td>@${market.date}</td>
                         <td>@${market.num_tent}</td>
                       <td><button type="button" class="btn btn-primary"  onclick='deleteMarket(${market.id_tp2_market})'> delete</button></td>
-                      <td><button type="button" class="btn btn-primary"  onclick='choseToEdit(${market.id_tp2_market})' data-target="#exampleModalCenter">delete</button></td>
+                      <td><button type="button" class="btn btn-primary"  onclick='choseToEdit(${market.id_tp2_market})' data-target="#exampleModalCenter">Update</button></td>
                     </tr>
                     `
         }
@@ -75,3 +79,38 @@ async function deleteMarket(id) {
         console.log(err);
     }
 }
+
+
+function choseToEdit(id) {
+    idEdit = id
+    $("#exampleModalCenter").modal()
+
+
+}
+
+
+
+
+form2.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    console.log(idEdit);
+
+    try {
+        const request = await HTTP.put(`/markets/update/${idEdit}`, {
+            name: document.querySelector("#name_edit").value,
+            date: document.querySelector("#date_edit").value,
+            place: document.querySelector("#place_edit").value,
+            num_tent: document.querySelector("#num_tent_edit").value,
+            photo: "asd",
+            admin: user_id[0].id_tp2_user,
+            deleted: 0
+        }, {
+            headers
+        })
+        console.log(request);
+
+        alert("Market Edited!")
+    } catch (err) {
+        console.log(err)
+    }
+})
