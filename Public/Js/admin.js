@@ -68,7 +68,7 @@ async function deleteMarket(id) {
         const response = await HTTP.put(`/markets/delete/${id}`, {}, {
             headers
         });
-        console.log(response.data);
+        alert("Deleted!")
     } catch (err) {
         console.log(err);
     }
