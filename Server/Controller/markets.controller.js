@@ -80,10 +80,12 @@ function deleteMarket(req, res) {
     });
 }
 
+
+// future
 function likeMarket(req, res) {
     let id_market = req.body.id_market
     let id_user = req.body.id_user
-    
+
 
     con.query(`INSERT INTO tp2_market_user (id_tp2_user, id_tp2_market) VALUES ('${id_user}','${id_market}')`, (queryErr, result) => {
         if (!queryErr) {
@@ -97,6 +99,21 @@ function likeMarket(req, res) {
     })
 
 }
+
+
+
+
+// function deleteLike(req, res) {
+//     let id_market = req.body.market_id;
+//     let id_user = req.body.user_id;
+//     con.query("UPDATE tp2_market_user SET deleted = 1 WHERE id_tp2_market = ? and id_tp2_user = ?", [id_market,id_user], function (err,
+//         result) {
+//         if (!err) {
+//             return res.json(result);
+//         } else
+//             throw err;
+//     });
+// }
 
 module.exports = {
     getMarketByUserID,
