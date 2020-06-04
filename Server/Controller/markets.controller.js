@@ -35,7 +35,7 @@ function addMarket(req, res) {
         admin: req.body.admin,
         num_tent: req.body.num_tent,
         name: req.body.name,
-        photo: req.body.photo,
+        photo: "asd",
         deleted: 0
     }
 
