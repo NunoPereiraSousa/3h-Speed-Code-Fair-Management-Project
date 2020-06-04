@@ -83,6 +83,7 @@ function deleteMarket(req, res) {
 function likeMarket(req, res) {
     let id_market = req.body.id_market
     let id_user = req.body.id_user
+    
 
     con.query(`INSERT INTO tp2_market_user (id_tp2_user, id_tp2_market) VALUES ('${id_user}','${id_market}')`, (queryErr, result) => {
         if (!queryErr) {
