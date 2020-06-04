@@ -18,7 +18,7 @@ let form = document.querySelector("#addMarket")
 
 async function loadMarketsTable() {
     try {
-        const response = await HTTP.get(`/markets/${user_id[0].id_tp2_user}`);                
+        const response = await HTTP.get(`/markets/${user_id[0].id_tp2_user}`);
         let table = "";
         for (const market of response.data) {
             table += `
@@ -28,18 +28,22 @@ async function loadMarketsTable() {
                         <td>@${market.place}</td>
                         <td>@${market.date}</td>
                         <td>@${market.num_tent}</td>
+                      <td><button type="button" class="btn btn-primary"  onclick='deleteMarket(${market.id_tp2_market})'> delete</button></td>
+                      <td><button type="button" class="btn btn-primary"  onclick='choseToEdit(${market.id_tp2_market})' data-target="#exampleModalCenter">delete</button></td>
                     </tr>
                     `
-        }        
+        }
         document.querySelector("#tableBody").innerHTML = table;
     } catch (err) {
         return err;
     }
 }
 
+
+
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    try {        
+    try {
         const request = await HTTP.post("/add-market", {
             name: document.querySelector("#name").value,
             date: document.querySelector("#date").value,
@@ -52,9 +56,22 @@ form.addEventListener("submit", async (e) => {
             headers
         })
         console.log(request);
-        
+
         alert("Market Added!")
     } catch (err) {
         console.log(err)
     }
 })
+
+
+
+async function deleteMarket(id) {
+    try {
+        const response = await HTTP.put(`/markets/delete/${id}`, {}, {
+            headers
+        });
+        console.log(response.data);
+    } catch (err) {
+        console.log(err);
+    }
+}
