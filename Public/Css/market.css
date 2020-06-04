@@ -1,0 +1,60 @@
+html,
+body {
+  overflow-x: hidden;
+  font-family: 'Segoe UI';
+  scroll-behavior: smooth;
+  background-color: #272727;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 2px;
+  background-color: #363636;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #fefefa;
+}
+
+.navbar {
+  background-color: #272727 !important;
+  -webkit-box-shadow: 0 4px 3px -5px #fefefa;
+          box-shadow: 0 4px 3px -5px #fefefa;
+}
+
+.navbar a {
+  color: #fefefa !important;
+}
+
+.navbar .dropdown-menu {
+  background-color: #272727 !important;
+}
+
+.navbar .dropdown-menu a:hover {
+  background-color: #fefefa !important;
+  color: #363636 !important;
+}
+
+h4 {
+  color: #fefefa;
+  position: relative;
+  padding: 100px 0px 20px 0px;
+}
+
+h4:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 12%;
+  height: 3px;
+  background: #fefefa;
+}
+/*# sourceMappingURL=market.css.map */

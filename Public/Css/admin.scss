@@ -1,0 +1,71 @@
+html,
+body {
+    overflow-x: hidden;
+    font-family: 'Segoe UI';
+    scroll-behavior: smooth;
+    background-color: #272727;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 2px;
+    background-color: #363636;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #fefefa;
+}
+
+.navbar {
+    background-color: #272727 !important;
+    box-shadow: 0 4px 3px -5px #fefefa;
+
+    a {
+        color: #fefefa !important;
+    }
+
+    .dropdown-menu {
+        background-color: #272727 !important;
+
+        a:hover {
+            background-color: #fefefa !important;
+            color: #363636 !important;
+        }
+    }
+}
+
+#add {
+    form {
+        padding-top: 4em;
+    }
+}
+
+#myMarkets {
+    table {
+        margin-top: 4em;
+        color: #fefefa;
+    }
+}
+
+h4 {
+    color: #fefefa;
+    position: relative;
+    padding: 100px 0px 20px 0px;
+
+    &:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 12%;
+        height: 3px;
+        background: #fefefa;
+    }
+}

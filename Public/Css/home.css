@@ -1,4 +1,168 @@
-html, body {
+html,
+body {
+  overflow-x: hidden;
   font-family: 'Segoe UI';
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 2px;
+  background-color: #363636;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #fefefa;
+}
+
+.navbar {
+  background-color: #272727 !important;
+  -webkit-box-shadow: 0 4px 3px -5px #fefefa;
+          box-shadow: 0 4px 3px -5px #fefefa;
+}
+
+.navbar a {
+  color: #fefefa !important;
+}
+
+.navbar .dropdown-menu {
+  background-color: #272727 !important;
+}
+
+.navbar .dropdown-menu a:hover {
+  background-color: #fefefa !important;
+  color: #363636 !important;
+}
+
+#background {
+  padding: 0;
+  margin: 0;
+  background-image: url("../Assets/feira.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#background #blur {
+  background: inherit;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+#background #blur:before {
+  content: "";
+  background: inherit;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-box-shadow: inset 0 0 0 3000px rgba(0, 0, 0, 0.7);
+          box-shadow: inset 0 0 0 3000px rgba(0, 0, 0, 0.7);
+}
+
+#background #text {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fefefa;
+}
+
+#background #text h2 {
+  font-size: 2em;
+}
+
+#background #text h1 {
+  font-size: 5em;
+}
+
+#background .position-absolute {
+  bottom: 6%;
+  left: 50%;
+  -webkit-animation: upDown 1s infinite alternate ease-in-out;
+          animation: upDown 1s infinite alternate ease-in-out;
+}
+
+#about {
+  height: 140vh;
+  width: 100vw;
+  padding-top: 8rem;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#about .row {
+  padding-top: 3%;
+  padding-bottom: 10%;
+}
+
+#about .row:last-child {
+  padding-bottom: 15%;
+}
+
+#about .col-lg-3 {
+  padding: 20px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: -webkit-box-shadow 0.5s ease-in-out;
+  transition: -webkit-box-shadow 0.5s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out, -webkit-box-shadow 0.5s ease-in-out;
+  color: #fefefa;
+}
+
+#about .col-lg-3 p.title {
+  font-weight: 500;
+  color: #47a3ee;
+}
+
+#about #locker {
+  background-image: url("../Assets/feira2.png");
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#about #train {
+  background-image: url("../Assets/feira3.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@-webkit-keyframes upDown {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
+
+@keyframes upDown {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
 }
 /*# sourceMappingURL=home.css.map */

@@ -1,0 +1,73 @@
+html, body {
+  font-family: 'Segoe UI';
+}
+
+#background {
+  padding: 0;
+  margin: 0;
+  background-image: url("../Assets/feira.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#background #blur {
+  background: inherit;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+#background #blur:before {
+  content: "";
+  background: inherit;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-box-shadow: inset 0 0 0 3000px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 0 0 3000px rgba(0, 0, 0, 0.5);
+}
+
+#background #window {
+  padding: 6em 6em 6em 6em;
+  background-color: #272727;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 5px;
+}
+
+#background #window h3 {
+  text-align: center;
+  color: #fefefa;
+}
+
+#background #window form {
+  color: #272727;
+}
+
+#background #window form .btn {
+  margin-top: 1em;
+  background-color: #fefefa !important;
+  border: none;
+  color: #272727;
+  width: 100%;
+}
+
+#background #window form .btn.focus,
+#background #window form .btn:focus,
+#background #window form .btn.focus,
+#background #window form .btn.focus:active,
+#background #window form .btn:active:focus,
+#background #window form .btn:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/*# sourceMappingURL=login.css.map */
