@@ -1,4 +1,4 @@
-let URL = "http://localhost:8080";
+let URL = "https://imarkett.herokuapp.com";
 
 let form = document.querySelector("#register");
 

@@ -1,21 +1,14 @@
-let URL = "http://localhost:8080";
-
-
-
+let URL = "https://imarkett.herokuapp.com";
 
 window.onload = () => {
     loadMarkets();
 }
 
-
 const HTTP = axios.create({
     baseURL: URL
 });
 
-
-
 async function loadMarkets() {
-
     let token = JSON.parse(localStorage.getItem("users"))
     let logUser = JSON.parse(localStorage.getItem("logUser"))
 

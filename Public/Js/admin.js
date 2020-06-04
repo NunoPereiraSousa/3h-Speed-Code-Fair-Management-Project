@@ -1,4 +1,4 @@
-let URL = "http://localhost:8080";
+let URL = "https://imarkett.herokuapp.com";
 
 let idEdit = null
 
@@ -32,8 +32,8 @@ async function loadMarketsTable() {
                         <td>@${market.place}</td>
                         <td>@${market.date}</td>
                         <td>@${market.num_tent}</td>
-                      <td><button type="button" class="btn btn-primary"  onclick='deleteMarket(${market.id_tp2_market})'> delete</button></td>
-                      <td><button type="button" class="btn btn-primary"  onclick='choseToEdit(${market.id_tp2_market})' data-target="#exampleModalCenter">Update</button></td>
+                        <td><button type="button" class="btn btn-primary"  onclick='deleteMarket(${market.id_tp2_market})'> delete</button></td>
+                        <td><button type="button" class="btn btn-primary"  onclick='choseToEdit(${market.id_tp2_market})' data-target="#exampleModalCenter">Update</button></td>
                     </tr>
                     `
         }
@@ -42,8 +42,6 @@ async function loadMarketsTable() {
         return err;
     }
 }
-
-
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -59,15 +57,11 @@ form.addEventListener("submit", async (e) => {
         }, {
             headers
         })
-        console.log(request);
-
         alert("Market Added!")
     } catch (err) {
         console.log(err)
     }
 })
-
-
 
 async function deleteMarket(id) {
     try {
@@ -80,21 +74,13 @@ async function deleteMarket(id) {
     }
 }
 
-
 function choseToEdit(id) {
     idEdit = id
     $("#exampleModalCenter").modal()
-
-
 }
-
-
-
 
 form2.addEventListener("submit", async (e) => {
     e.preventDefault();
-    console.log(idEdit);
-
     try {
         const request = await HTTP.put(`/markets/update/${idEdit}`, {
             name: document.querySelector("#name_edit").value,
@@ -107,8 +93,6 @@ form2.addEventListener("submit", async (e) => {
         }, {
             headers
         })
-        console.log(request);
-
         alert("Market Edited!")
     } catch (err) {
         console.log(err)
