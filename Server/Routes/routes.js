@@ -20,6 +20,10 @@ router.post("/login", logAndRegController.logUser)
 router.post("/register", logAndRegController.signUpUser)
 
 // MARKET routers
-// router.get("/markets/:id", marketController.logUser)
+router.get("/markets", marketController.getAllMarket)
+router.get("/markets/:id", marketController.getMarketByUserID)
+router.put("/markets/update/:id", marketController.updateMarket)
+router.get("/markets/delete/:id", marketController.deleteMarket)
+router.get("/like-markets", marketController.likeMarket)
 
 module.exports = router
