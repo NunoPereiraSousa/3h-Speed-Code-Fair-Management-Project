@@ -17,10 +17,10 @@ function getMarketByUserID(req, res) {
 }
 
 function getAllMarket(req, res) {
-    con.query("SELECT * FROM tp2_market WHERE deleted = 0", function (err,
+    con.query("SELECT * FROM tp2_market WHERE deleted != 1", function (err,
         result) {
         if (!err) {
-            return res.status(200).send(result[0]);
+            return res.status(200).send(result);
         } else
             return res.status(400).send({
                 "error": err

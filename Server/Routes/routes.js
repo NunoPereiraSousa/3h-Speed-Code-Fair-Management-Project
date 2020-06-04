@@ -22,6 +22,7 @@ router.post("/register", logAndRegController.signUpUser)
 // MARKET routers
 router.get("/markets", marketController.getAllMarket)
 router.get("/markets/:id", marketController.getMarketByUserID)
+router.post("/add-market", marketController.addMarket)
 router.put("/markets/update/:id", marketController.updateMarket)
 router.get("/markets/delete/:id", marketController.deleteMarket)
 router.get("/like-markets", marketController.likeMarket)
