@@ -1,0 +1,33 @@
+{
+  "name": "testenunotiago",
+  "version": "1.0.0",
+  "description": "teste nuno e tiago",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon Server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NunoPereiraSousa/TesteNunoTiago.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NunoPereiraSousa/TesteNunoTiago/issues"
+  },
+  "homepage": "https://github.com/NunoPereiraSousa/TesteNunoTiago#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-sanitizer": "^1.0.5",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "sass": "^1.26.7"
+  }
+}
