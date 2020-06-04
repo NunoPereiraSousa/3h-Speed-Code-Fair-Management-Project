@@ -17,14 +17,16 @@ function logUser(req, res) {
             if (result.length == 0) {
                 message = "Incorrect data"
             } else {
-                console.log(password);
-
+                // console.log(password);
+                // if (password == result[0].password) {
+                //     passwordSame = true
+                // }
                 passwordSame = bcrypt.compareSync(password, result[0].password) // confirms if the hashed password = to the password that has been introduced
                 console.log(passwordSame);
                 if (passwordSame == false) {
                     result = []
                     message = "Incorrect data"
-                } else if (passwordSame && result[0].id_tp2_user_type === 3) {
+                } else if (passwordSame && result[0].deleted === 1) {
                     result = []
                     message = "Incorrect data"
                     console.log("User is Blocked/Deleted"); //Just For tests
@@ -42,7 +44,7 @@ function logUser(req, res) {
             } else {
                 res.status(404).send(message)
                 console.log(message);
-                
+
             }
 
         } else {
