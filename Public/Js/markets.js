@@ -24,7 +24,6 @@ async function loadMarkets() {
         for (const market of response.data) {
             str += `<div class="col-lg-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="${market.photo}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">${market.name}</h5>
                     <p class="card-text">location: ${market.place}</p>
