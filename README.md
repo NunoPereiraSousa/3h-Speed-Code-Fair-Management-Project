@@ -4,7 +4,7 @@
 🦉 Hey there!
 
 In this repository you will find a 3h speed coding project development about a fair management. It includes normal user and administrator sides.
-Me and @github/Titasdp used:
+Me and [@VideoAmp/team-name](https://github.com/Titasdp) used:
 
 * HTML & CSS (SCSS)
 * JavaScript
