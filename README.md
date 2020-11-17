@@ -1,5 +1,5 @@
 ### TesteNunoTiago ###
-3h project. Front-end and back-end using HTML, CSS (SCSS) ad JavaScript (Node.JS). MySQL Database
+3h project. Front-end and back-end using HTML, CSS (SCSS) and JavaScript (Node.JS). MySQL Database
 
 🦉 Hey there!
 
